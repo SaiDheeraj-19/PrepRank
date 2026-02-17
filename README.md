@@ -1,151 +1,182 @@
 
 <div align="center">
 
-  <h1>🚀 PrepRank: The Study Priority Engine</h1>
-  
-  <p>
-    <strong>Optimize Your Study Time. Maximize Your Exam Score.</strong>
+  # 🎓 PrepRank
+  ### The Intelligent Study Priority Engine
+
+  <p align="center">
+    <a href="https://react.dev/">
+      <img src="https://img.shields.io/badge/Frontend-React%2018-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+    </a>
+    <a href="https://fastapi.tiangolo.com/">
+      <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
+    </a>
+    <a href="https://tailwindcss.com/">
+      <img src="https://img.shields.io/badge/Style-Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+    </a>
+    <a href="https://www.python.org/">
+      <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+    </a>
   </p>
 
-  <p>
-    <a href="#-the-problem">The Problem</a> •
-    <a href="#-the-solution">The Solution</a> •
-    <a href="#-how-it-works">How It Works</a> •
-    <a href="#-tech-stack">Tech Stack</a> •
-    <a href="#-quick-start">Quick Start</a>
+  <p align="center">
+    <strong>Stop guessing what to study. Let data decide.</strong>
+    <br />
+    PrepRank analyzes exam patterns and your personal mastery to generate the perfect study plan.
+    <br />
+    <br />
+    <a href="#-quick-start"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#-demo">View Demo</a>
+    ·
+    <a href="https://github.com/SaiDheeraj-19/PrepRank/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/SaiDheeraj-19/PrepRank/issues">Request Feature</a>
   </p>
-
-  <br>
-
-  ![Python](https://img.shields.io/badge/Backend-Python_3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-  ![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-  ![React](https://img.shields.io/badge/Frontend-React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-  ![Tailwind](https://img.shields.io/badge/Style-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
 </div>
 
-<br>
+<br />
 
 ---
 
-## 🎯 The Problem
+## ⚡ The "Why"
 
-Students preparing for competitive exams (JEE, NEET, SATs) face a critical challenge: **Information Overload**. 
+> *"I have 2 months left, 50 chapters to cover, and no idea where to start."*
 
-- 📚 **Too many topics** (50-100+) to cover in limited time.
-- 😵 **Decision Paralysis**: "Should I study Algebra or Optics today?"
-- 📉 **Inefficient Strategy**: Wasting hours on topics that rarely appear in exams or topics they've already mastered.
+Every student faces this. Most study schedulers are just **calendars**. They tell you *when* to study, but not *what* or *why*.
 
-The result? **Hard work, but suboptimal scores.**
-
-## 💡 The Solution
-
-**PrepRank** is not just a study tracker. It is an **intelligent decision support system**. 
-
-It analyzes past exam patterns and your personal performance to answer one simple question: **"What should I study *right now* to get the most marks?"**
+**PrepRank is different.** It is a **Decision Support System** that answers:
+1.  Which topics carry the most weight in the exam? 🏋️‍♀️
+2.  Which of those strictly important topics am I weak at? 📉
+3.  **Therefore, what should I study TODAY to maximize my marks?** 🚀
 
 ---
 
-## 🧠 How It Works
+## ✨ Features at a Glance
 
-The engine uses a weighted priority algorithm to rank every topic dynamically.
-
-### The Algorithm
-
-$$ \text{Priority} = \text{Importance} \times (1 - \text{Mastery}) $$
-
-#### 1. Global Importance (The "Yield")
-We calculate how valuable a topic is based on 3 factors:
-- **Frequency (35%)**: How often does it appear in exams?
-- **Marks (45%)**: How many marks is it worth?
-- **Recency (20%)**: Is it trending in recent years?
-
-#### 2. Personal Mastery (The "Gap")
-$$ \text{Mastery} = \frac{\text{Correct Answers}}{\text{Total Attempts}} \times \text{Confidence Factor} $$
-- If you've mastered a topic (Mastery ≈ 1.0), the Priority drops to **0**, regardless of importance.
-- If you're weak in a high-yield topic, the Priority skyrockets.
+| Feature | Description |
+| :--- | :--- |
+| **📊 Smart Ranking** | Algorithms rank topics by `Importance * (1 - Mastery)`. |
+| **🧠 Mastery Tracking** | Tracks your mock test accuracy and applies a "Confidence Penalty" for lucky guesses. |
+| **📅 Exam Analytics** | Weights topics by Frequency (35%), Marks (45%), and Recency (20%). |
+| **🎨 Visual Dashboard** | Beautiful, color-coded bar charts to visualize your study gaps. |
+| **🚀 Instant Action** | clear "Study Now", "Revise Later", and "Deprioritize" lists. |
 
 ---
 
-## 🛠 Tech Stack
+## 🔬 The Science (The Algorithm)
 
-### **Frontend**
-- **React + Vite**: Blazing fast, component-based UI.
-- **Tailwind CSS**: Modern, utility-first styling for a clean, professional dashboard.
-- **Recharts**: Beautiful, responsive data visualization.
+We don't use AI black boxes. We use deterministic, explainable math.
 
-### **Backend**
-- **FastAPI (Python)**: High-performance, async-ready REST API.
-- **Pandas**: Powerful data manipulation for the analytics engine.
-- **SQLAlchemy (PostgreSQL/SQLite)**: Robust ORM for data persistence.
+### 1. The Global Importance Score
+How valuable is a topic?
+```math
+Importance = (0.35 \times Frequency) + (0.45 \times Marks) + (0.20 \times Recency)
+```
+
+### 2. The Personal Mastery Score
+How good are you at it?
+```math
+Mastery = \frac{Correct \ Answers}{Total \ Attempts} \times ConfidenceFactor
+```
+*(ConfidenceFactor penalty applied if attempts < 3)*
+
+### 3. The Priority Score (The Magic) 🪄
+```math
+Priority = Importance \times (1 - Mastery)
+```
+- **High Importance + Low Mastery** = 🔴 **CRITICAL (Study Now)**
+- **High Importance + High Mastery** = 🟢 **Low Priority (Don't waste time)**
+
+---
+
+## 💻 Tech Stack
+
+This project is built with a modern, scalable stack:
+
+- **Frontend**: 
+  - [React](https://react.dev/) (Vite) for a blazing fast SPA.
+  - [TailwindCSS](https://tailwindcss.com/) for professional, responsive styling.
+  - [Recharts](https://recharts.org/) for data visualization.
+  
+- **Backend**: 
+  - [FastAPI](https://fastapi.tiangolo.com/) for high-performance async APIs.
+  - [Pandas](https://pandas.pydata.org/) for complex data analytics.
+  - [SQLAlchemy](https://www.sqlalchemy.org/) for ORM database management.
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Python 3.9+
-- Node.js 16+
+Get the engine running locally in 2 minutes.
 
-### 1. Clone the Repository
+### 1. Clone & Install
 ```bash
 git clone https://github.com/SaiDheeraj-19/PrepRank.git
 cd PrepRank
 ```
 
-### 2. Setup Backend
+### 2. Ignition (Backend) 🔥
 ```bash
-# Install dependencies
+# Setup Python Environment
 pip install -r backend/requirements.txt
 
-# Initialize database with sample data
+# Seed with Demo Data
 python backend/seed_data.py
 
-# Start the API server
+# Launch Server
 uvicorn backend.app.main:app --reload --port 8000
 ```
 
-### 3. Setup Frontend
+### 3. Launchpad (Frontend) 🛸
 ```bash
-# Open a new terminal
 cd frontend
-
-# Install dependencies
 npm install
-
-# Start the development server
 npm run dev
 ```
 
-Visit `http://localhost:5173` to view your personalized dashboard!
+Visit `http://localhost:5173` and start optimizing!
 
 ---
 
-## 📸 Screenshots
+## 📂 Project Structure
 
-*(Add screenshots of your dashboard here)*
-
-| Priority Dashboard | Action Plan |
-|:---:|:---:|
-| Visualizes your Mastery vs Importance | Clear "Study Now" vs "Revise Later" lists |
+```text
+PrepRank/
+├── backend/
+│   ├── app/
+│   │   ├── analytics.py    # 🧠 The mathematical brain
+│   │   ├── models.py       # 🗄️ Database schema
+│   │   └── main.py         # 🔌 API Endpoints
+│   └── seed_data.py        # 🌱 Demo data generator
+└── frontend/
+    └── src/
+        ├── components/     # 🧩 React components
+        └── services/       # 📡 API integrations
+```
 
 ---
 
-## 🔮 Future Roadmap
+## 🤝 Contributing
 
-- [ ] **Spaced Repetition**: Integrity forgetting curves to flag topics for revision.
-- [ ] **PDF Auto-Tagging**: Use NLP to extract topics from uploaded question papers.
-- [ ] **Study Time Optimization**: "I have 2 hours" -> Generates the perfect 2-hour schedule.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
 <div align="center">
-  
-  <p>Built with ❤️ by <strong>Sai Dheeraj</strong></p>
-  
-  <p>
-    <em>"Optimize study time. Maximize exam scores."</em>
-  </p>
-
+  <p>Built with 💻 and ☕ by <strong>Sai Dheeraj</strong></p>
+  <p>Star ⭐ this repo if you found it useful!</p>
 </div>
