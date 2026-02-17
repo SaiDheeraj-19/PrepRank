@@ -104,7 +104,7 @@ PrepRank/
 │   │   ├── 📄 database.py     # 🔌 Database connection pooling
 │   │   ├── 📄 main.py         # 🚦 API Route definitions & entry point
 │   │   ├── 📄 models.py       # 🗄️ SQLAlchemy DB Schemas (Tables)
-│   │   └── 📄 schemas.py      # 🛡️ Pydantic Data Validation Models
+│   │   ├── 📄 schemas.py      # 🛡️ Pydantic Data Validation Models
 │   ├── 📄 seed_data.py        # 🌱 Script to populate demo exam data
 │   ├── 📄 test_analytics.py   # ✅ Unit tests for the ranking engine
 │   └── 📄 requirements.txt    # 📦 Python dependencies
@@ -125,7 +125,7 @@ PrepRank/
 │   └── 📄 vite.config.js      # ⚡ Vite bundler settings
 │
 ├── 📂 assets/                 # 🖼️ Project Images & Logos
-│   └── 📄 banner.svg          # Beautiful SVG Banner
+│   └── 📄 banner.svg          # Beautiful SVG Banner by Sai Dheeraj
 ├── 📄 LICENSE                 # ⚖️ MIT License
 └── 📄 README.md               # 📖 The file you are reading!
 ```
@@ -229,6 +229,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <div align="center">
   <br />
   <p>Built with ❤️ and ☕ for students everywhere.</p>
-  <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="Built with Love" />
-  <img src="https://forthebadge.com/images/badges/made-with-python.svg" alt="Made with Python" />
+  <img src="https://img.shields.io/badge/Built%20With-Love-red?style=for-the-badge" alt="Built with Love" />
+  <img src="https://img.shields.io/badge/Made%20With-Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Made with Python" />
 </div>

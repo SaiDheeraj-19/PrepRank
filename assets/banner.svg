@@ -28,8 +28,11 @@
   <circle cx="350" cy="50" r="6" fill="#c084fc" />
 
   <!-- Main Title -->
-  <text x="400" y="110" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="80" text-anchor="middle" fill="url(#textGrad)" style="filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.5));">PrepRank</text>
+  <text x="400" y="100" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="80" text-anchor="middle" fill="url(#textGrad)" style="filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.5));">PrepRank</text>
 
   <!-- Subtitle -->
-  <text x="400" y="150" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="20" text-anchor="middle" fill="#e2e8f0" letter-spacing="2">INTELLIGENT STUDY PRIORITY ENGINE</text>
+  <text x="400" y="140" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="18" text-anchor="middle" fill="#e2e8f0" letter-spacing="3">INTELLIGENT STUDY PRIORITY ENGINE</text>
+
+  <!-- Author Credit -->
+  <text x="780" y="190" font-family="Arial, Helvetica, sans-serif" font-weight="300" font-size="12" text-anchor="end" fill="#94a3b8" opacity="0.8">Architected by Sai Dheeraj</text>
 </svg>
