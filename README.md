@@ -10,9 +10,9 @@
     <em>"Stop guessing. Start ranking. Optimize your limited study time."</em>
     <br />
     <br />
-    <a href="https://github.com/SaiDheeraj-19/PrepRank/issues">Report Bug</a>
+    <a href="https://github.com/SaiDheeraj-19/PrepRank/issues/new?assignees=&labels=bug&template=bug_report.md&title=[BUG]">Report Bug</a>
     ·
-    <a href="https://github.com/SaiDheeraj-19/PrepRank/issues">Request Feature</a>
+    <a href="https://github.com/SaiDheeraj-19/PrepRank/issues/new?assignees=&labels=enhancement&template=feature_request.md&title=[FEATURE]">Request Feature</a>
   </p>
 </div>
 
