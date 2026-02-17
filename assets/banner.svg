@@ -1,0 +1,35 @@
+
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dynamic Gradient Background -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#818cf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c084fc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Rect -->
+  <rect width="800" height="200" rx="15" fill="url(#grad1)" />
+
+  <!-- Code/Matrix Pattern (Subtle) -->
+  <text x="50" y="40" font-family="monospace" font-size="20" fill="#334155" opacity="0.4">Priority = Importance * (1 - Mastery)</text>
+  <text x="600" y="160" font-family="monospace" font-size="20" fill="#334155" opacity="0.4">return "Study Now"</text>
+
+  <!-- Graph Elements -->
+  <path d="M50 150 L150 100 L250 130 L350 50" stroke="url(#textGrad)" stroke-width="4" fill="none" opacity="0.8"/>
+  <circle cx="50" cy="150" r="4" fill="#38bdf8" />
+  <circle cx="150" cy="100" r="4" fill="#818cf8" />
+  <circle cx="250" cy="130" r="4" fill="#a78bfa" />
+  <circle cx="350" cy="50" r="6" fill="#c084fc" />
+
+  <!-- Main Title -->
+  <text x="400" y="110" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="80" text-anchor="middle" fill="url(#textGrad)" style="filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.5));">PrepRank</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="150" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="20" text-anchor="middle" fill="#e2e8f0" letter-spacing="2">INTELLIGENT STUDY PRIORITY ENGINE</text>
+</svg>

@@ -2,10 +2,10 @@
 <!-- PROJECT HEADER -->
 <br />
 <div align="center">
-  <h1 align="center">🚀 PrepRank</h1>
-
+  <img src="assets/banner.svg" alt="PrepRank Logo" width="100%" height="auto" />
+  
   <p align="center">
-    <strong>The Intelligent Study Priority Engine</strong>
+    <strong>The Intelligent Decision Engine for Competitive Exams</strong>
     <br />
     <em>"Stop guessing. Start ranking. Optimize your limited study time."</em>
     <br />
@@ -33,9 +33,10 @@
   <ol>
     <li><a href="#-about-the-project">About The Project</a></li>
     <li><a href="#-key-features">Key Features</a></li>
+    <li><a href="#-system-architecture">System Architecture</a></li>
+    <li><a href="#-folder-structure">Folder Structure</a></li>
     <li><a href="#-the-algorithm">The Algorithm</a></li>
     <li><a href="#-getting-started">Getting Started</a></li>
-    <li><a href="#-project-structure">Project Structure</a></li>
     <li><a href="#-license">License</a></li>
     <li><a href="#-contact">Contact</a></li>
   </ol>
@@ -47,9 +48,7 @@
 
 > **"I have 50 topics to study and only 30 days left. Where do I even start?"**
 
-Every student faces decision paralysis. Traditional tools are passive—they track what you *did*. **PrepRank** is active—it tells you what you *should do*.
-
-It acts as a **Decision Support System**, analyzing exam history and your personal performance to generate a scientifically prioritized roadmap.
+Every student faces decision paralysis. Traditional tools are passive—they track what you *did*. **PrepRank** is active—it tells you what you *should do*. It acts as a **Decision Support System**, analyzing exam history and your personal performance to generate a scientifically prioritized roadmap.
 
 ### Why PrepRank?
 *   ✅ **Data-Driven**: No more intuition. Uses hard data (frequency, marks, recency).
@@ -67,6 +66,69 @@ It acts as a **Decision Support System**, analyzing exam history and your person
 | **📅 Exam DNA Analysis** | Weights topics by Frequency (35%), Marks (45%), and Recency (20%). |
 | **🎨 Actionable Dashboard** | Clean UI separating tasks into "Study Now" 🔴, "Revise" 🟡, and "Mastered" 🟢. |
 | **🔌 Extensible API** | Built on FastAPI, ready integration with any LMS. |
+
+---
+
+## 🏗️ System Architecture
+
+PrepRank follows a modern 3-tier architecture designed for scalability and separation of concerns.
+
+```mermaid
+graph TD
+    User((Student)) -->|Views Dashboard| Frontend[React + Vite Frontend]
+    User -->|Takes Mock Test| Frontend
+    
+    Frontend -->|REST API Calls| Backend[FastAPI Backend]
+    
+    Backend -->|Queries| DB[(PostgreSQL / SQLite)]
+    Backend -->|Uses| Analytics[Pandas Analytics Engine]
+    
+    Analytics -->|Fetches History| DB
+    Analytics -->|Calculates| Priority[Priority Score & Study Plan]
+    
+    Priority -->|Returns JSON| Backend
+    Backend -->|Updates UI| Frontend
+```
+
+---
+
+## 📂 Folder Structure
+
+A meticulous breakdown of the codebase organization.
+
+```text
+PrepRank/
+├── 📂 backend/                # Python FastAPI Backend
+│   ├── 📂 app/                
+│   │   ├── 📄 analytics.py    # 🧠 Core Algorithmic Engine (Pandas logic)
+│   │   ├── 📄 database.py     # 🔌 Database connection pooling
+│   │   ├── 📄 main.py         # 🚦 API Route definitions & entry point
+│   │   ├── 📄 models.py       # 🗄️ SQLAlchemy DB Schemas (Tables)
+│   │   └── 📄 schemas.py      # 🛡️ Pydantic Data Validation Models
+│   ├── 📄 seed_data.py        # 🌱 Script to populate demo exam data
+│   ├── 📄 test_analytics.py   # ✅ Unit tests for the ranking engine
+│   └── 📄 requirements.txt    # 📦 Python dependencies
+│
+├── 📂 frontend/               # React + Tailwind Frontend
+│   ├── 📂 public/             # Static assets
+│   ├── 📂 src/
+│   │   ├── 📂 components/     # 🧩 Reusable React Components
+│   │   │   ├── 📄 PriorityChart.jsx    # 📊 Recharts Bar Chart
+│   │   │   ├── 📄 StudyPlan.jsx        # 📝 The "Action Plan" List
+│   │   │   └── 📄 TopicPriorityTable.jsx # 📋 Detailed data grid
+│   │   ├── 📂 services/       # 📡 API Integration Layer
+│   │   │   └── 📄 api.js      # Fetch wrapper for Backend API
+│   │   ├── 📄 App.jsx         # 📱 Main Layout & State Management
+│   │   └── 📄 main.jsx        # 🚀 Application Entry Point
+│   ├── 📄 index.css           # 🎨 Global styles & Tailwind directives
+│   ├── 📄 tailwind.config.js  # ⚙️ Tailwind configuration
+│   └── 📄 vite.config.js      # ⚡ Vite bundler settings
+│
+├── 📂 assets/                 # 🖼️ Project Images & Logos
+│   └── 📄 banner.svg          # Beautiful SVG Banner
+├── 📄 LICENSE                 # ⚖️ MIT License
+└── 📄 README.md               # 📖 The file you are reading!
+```
 
 ---
 
@@ -151,31 +213,6 @@ npm run dev
 ```
 
 Visit `http://localhost:5173` and see your priorities!
-
----
-
-## 📂 Project Structure
-
-A clean architecture for a clean mind.
-
-```text
-PrepRank/
-├── backend/                # FastAPI Application
-│   ├── app/
-│   │   ├── analytics.py    # 🧠 The core ranking logic
-│   │   ├── models.py       # 🗄️ Database schema (SQLAlchemy)
-│   │   └── main.py         # 🔌 API Routes
-│   ├── seed_data.py        # 🌱 Script to generate sample exam data
-│   └── requirements.txt    # 📦 Python dependencies
-└── frontend/               # React + Vite Application
-    ├── src/
-    │   ├── components/     # 🧩 Reusable UI components
-    │   │   ├── PriorityChart.jsx
-    │   │   └── TopPriorityTable.jsx
-    │   ├── services/       # 📡 API fetchers
-    │   └── App.jsx         # 📱 Main dashboard layout
-    └── tailwind.config.js  # 🎨 Styling configuration
-```
 
 ---
 
