@@ -1,172 +1,181 @@
 
+<!-- PROJECT HEADER -->
+<br />
 <div align="center">
-
-  # 🎓 PrepRank
-  ### The Intelligent Study Priority Engine
+  <h1 align="center">🚀 PrepRank</h1>
 
   <p align="center">
-    <a href="https://react.dev/">
-      <img src="https://img.shields.io/badge/Frontend-React%2018-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
-    </a>
-    <a href="https://fastapi.tiangolo.com/">
-      <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-    </a>
-    <a href="https://tailwindcss.com/">
-      <img src="https://img.shields.io/badge/Style-Tailwind%20CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
-    </a>
-    <a href="https://www.python.org/">
-      <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-    </a>
-  </p>
-
-  <p align="center">
-    <strong>Stop guessing what to study. Let data decide.</strong>
+    <strong>The Intelligent Study Priority Engine</strong>
     <br />
-    PrepRank analyzes exam patterns and your personal mastery to generate the perfect study plan.
+    <em>"Stop guessing. Start ranking. Optimize your limited study time."</em>
     <br />
     <br />
-    <a href="#-quick-start"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="#-demo">View Demo</a>
-    ·
     <a href="https://github.com/SaiDheeraj-19/PrepRank/issues">Report Bug</a>
     ·
     <a href="https://github.com/SaiDheeraj-19/PrepRank/issues">Request Feature</a>
   </p>
 </div>
 
+<!-- TECH STACK BADGES -->
+<div align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+</div>
+
 <br />
 
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary><strong>📚 Table of Contents</strong> (Click to Expand)</summary>
+  <ol>
+    <li><a href="#-about-the-project">About The Project</a></li>
+    <li><a href="#-key-features">Key Features</a></li>
+    <li><a href="#-the-algorithm">The Algorithm</a></li>
+    <li><a href="#-getting-started">Getting Started</a></li>
+    <li><a href="#-project-structure">Project Structure</a></li>
+    <li><a href="#-license">License</a></li>
+    <li><a href="#-contact">Contact</a></li>
+  </ol>
+</details>
+
 ---
 
-## ⚡ The "Why"
+## 💡 About The Project
 
-> *"I have 2 months left, 50 chapters to cover, and no idea where to start."*
+> **"I have 50 topics to study and only 30 days left. Where do I even start?"**
 
-Every student faces this. Most study schedulers are just **calendars**. They tell you *when* to study, but not *what* or *why*.
+Every student faces decision paralysis. Traditional tools are passive—they track what you *did*. **PrepRank** is active—it tells you what you *should do*.
 
-**PrepRank is different.** It is a **Decision Support System** that answers:
-1.  Which topics carry the most weight in the exam? 🏋️‍♀️
-2.  Which of those strictly important topics am I weak at? 📉
-3.  **Therefore, what should I study TODAY to maximize my marks?** 🚀
+It acts as a **Decision Support System**, analyzing exam history and your personal performance to generate a scientifically prioritized roadmap.
+
+### Why PrepRank?
+*   ✅ **Data-Driven**: No more intuition. Uses hard data (frequency, marks, recency).
+*   ✅ **Personalized**: Adapts to *your* weaknesses.
+*   ✅ **Visual**: See your progress in beautiful, interactive charts.
 
 ---
 
-## ✨ Features at a Glance
+## ✨ Key Features
 
 | Feature | Description |
 | :--- | :--- |
-| **📊 Smart Ranking** | Algorithms rank topics by `Importance * (1 - Mastery)`. |
-| **🧠 Mastery Tracking** | Tracks your mock test accuracy and applies a "Confidence Penalty" for lucky guesses. |
-| **📅 Exam Analytics** | Weights topics by Frequency (35%), Marks (45%), and Recency (20%). |
-| **🎨 Visual Dashboard** | Beautiful, color-coded bar charts to visualize your study gaps. |
-| **🚀 Instant Action** | clear "Study Now", "Revise Later", and "Deprioritize" lists. |
+| **📊 Smart Ranking Engine** | Dynamically re-ranks topics daily based on new performance data. |
+| **🧠 Mastery Tracking** | Intelligent "Confidence Score" penalizes lucky guesses on mock tests. |
+| **📅 Exam DNA Analysis** | Weights topics by Frequency (35%), Marks (45%), and Recency (20%). |
+| **🎨 Actionable Dashboard** | Clean UI separating tasks into "Study Now" 🔴, "Revise" 🟡, and "Mastered" 🟢. |
+| **🔌 Extensible API** | Built on FastAPI, ready integration with any LMS. |
 
 ---
 
-## 🔬 The Science (The Algorithm)
+## 🧬 The Algorithm
 
-We don't use AI black boxes. We use deterministic, explainable math.
+We believe in transparency. Here is the math that powers your success:
 
-### 1. The Global Importance Score
-How valuable is a topic?
+<div align="center">
+  <h3><code>Priority = Importance × (1 - Mastery)</code></h3>
+</div>
+
+<details>
+<summary><strong>See Detailed Formula Breakdown</strong> (Click to Expand)</summary>
+
+#### 1. Global Importance Score (The "Yield")
+How valuable is a topic globally?
 ```math
 Importance = (0.35 \times Frequency) + (0.45 \times Marks) + (0.20 \times Recency)
 ```
 
-### 2. The Personal Mastery Score
-How good are you at it?
+#### 2. Personal Mastery Score (The "Gap")
+How well do *you* know it?
 ```math
 Mastery = \frac{Correct \ Answers}{Total \ Attempts} \times ConfidenceFactor
 ```
 *(ConfidenceFactor penalty applied if attempts < 3)*
 
-### 3. The Priority Score (The Magic) 🪄
-```math
-Priority = Importance \times (1 - Mastery)
-```
-- **High Importance + Low Mastery** = 🔴 **CRITICAL (Study Now)**
-- **High Importance + High Mastery** = 🟢 **Low Priority (Don't waste time)**
+#### 3. Interpretation
+| Score | Meaning | Action |
+| :--- | :--- | :--- |
+| **High Importance + Low Mastery** | 🔴 Critical Gap | **STUDY NOW** |
+| **High Importance + High Mastery** | 🟢 Secure | **Revise Later** |
+| **Low Importance** | ⚪ Low Yield | **Deprioritize** |
+
+</details>
 
 ---
 
-## 💻 Tech Stack
+## 🚀 Getting Started
 
-This project is built with a modern, scalable stack:
+Follow these steps to get your local copy up and running.
 
-- **Frontend**: 
-  - [React](https://react.dev/) (Vite) for a blazing fast SPA.
-  - [TailwindCSS](https://tailwindcss.com/) for professional, responsive styling.
-  - [Recharts](https://recharts.org/) for data visualization.
-  
-- **Backend**: 
-  - [FastAPI](https://fastapi.tiangolo.com/) for high-performance async APIs.
-  - [Pandas](https://pandas.pydata.org/) for complex data analytics.
-  - [SQLAlchemy](https://www.sqlalchemy.org/) for ORM database management.
+### Prerequisites
 
----
+*   **Python 3.9+**
+*   **Node.js 16+**
 
-## 🚀 Quick Start
+### Installation
 
-Get the engine running locally in 2 minutes.
-
-### 1. Clone & Install
+**1. Clone the Repository**
 ```bash
 git clone https://github.com/SaiDheeraj-19/PrepRank.git
 cd PrepRank
 ```
 
-### 2. Ignition (Backend) 🔥
+**2. Ignite the Backend (Python)** 🔥
 ```bash
-# Setup Python Environment
+# Create virtual environment (Recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
 pip install -r backend/requirements.txt
 
-# Seed with Demo Data
+# Seed the database with demo data impact
 python backend/seed_data.py
 
-# Launch Server
+# Launch the API
 uvicorn backend.app.main:app --reload --port 8000
 ```
 
-### 3. Launchpad (Frontend) 🛸
+**3. Launch the Frontend (React)** 🛸
 ```bash
+# Open a new terminal
 cd frontend
+
+# Install dependencies
 npm install
+
+# Start the dashboard
 npm run dev
 ```
 
-Visit `http://localhost:5173` and start optimizing!
+Visit `http://localhost:5173` and see your priorities!
 
 ---
 
 ## 📂 Project Structure
 
+A clean architecture for a clean mind.
+
 ```text
 PrepRank/
-├── backend/
+├── backend/                # FastAPI Application
 │   ├── app/
-│   │   ├── analytics.py    # 🧠 The mathematical brain
-│   │   ├── models.py       # 🗄️ Database schema
-│   │   └── main.py         # 🔌 API Endpoints
-│   └── seed_data.py        # 🌱 Demo data generator
-└── frontend/
-    └── src/
-        ├── components/     # 🧩 React components
-        └── services/       # 📡 API integrations
+│   │   ├── analytics.py    # 🧠 The core ranking logic
+│   │   ├── models.py       # 🗄️ Database schema (SQLAlchemy)
+│   │   └── main.py         # 🔌 API Routes
+│   ├── seed_data.py        # 🌱 Script to generate sample exam data
+│   └── requirements.txt    # 📦 Python dependencies
+└── frontend/               # React + Vite Application
+    ├── src/
+    │   ├── components/     # 🧩 Reusable UI components
+    │   │   ├── PriorityChart.jsx
+    │   │   └── TopPriorityTable.jsx
+    │   ├── services/       # 📡 API fetchers
+    │   └── App.jsx         # 📱 Main dashboard layout
+    └── tailwind.config.js  # 🎨 Styling configuration
 ```
-
----
-
-## 🤝 Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ---
 
@@ -176,7 +185,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
+## 📬 Contact
+
+**Sai Dheeraj** - [GitHub Profile](https://github.com/SaiDheeraj-19)
+
 <div align="center">
-  <p>Built with 💻 and ☕ by <strong>Sai Dheeraj</strong></p>
-  <p>Star ⭐ this repo if you found it useful!</p>
+  <br />
+  <p>Built with ❤️ and ☕ for students everywhere.</p>
+  <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="Built with Love" />
+  <img src="https://forthebadge.com/images/badges/made-with-python.svg" alt="Made with Python" />
 </div>
